@@ -8,10 +8,55 @@ A cutting-edge decentralized marketplace where farmers meet buyers directly on t
 [![Clarity](https://img.shields.io/badge/Smart%20Contract-Clarity-orange)](https://clarity-lang.org)
 [![React](https://img.shields.io/badge/Frontend-React-61dafb)](https://reactjs.org)
 
+---
+![SatoshiFarm](assets/toshi.png)
+
+## Table of Contents
+
+- [SatoshiFarm](#satoshifarm)
+  - [Table of Contents](#table-of-contents)
+  - [What's SatoshiFarm?](#whats-satoshifarm)
+    - [Key Features](#key-features)
+  - [Architecture at a Glance](#architecture-at-a-glance)
+    - [System Overview](#system-overview)
+    - [Smart Contract Flow](#smart-contract-flow)
+  - [Quick Start](#quick-start)
+    - [Prerequisites](#prerequisites)
+    - [Get It Running](#get-it-running)
+  - [Smart Contract Deep Dive](#smart-contract-deep-dive)
+    - [Core Functions](#core-functions)
+    - [Data Magic](#data-magic)
+  - [Frontend Tech Stack](#frontend-tech-stack)
+  - [Wallet Integration Made Simple](#wallet-integration-made-simple)
+    - [Supported Wallets](#supported-wallets)
+    - [How It Works](#how-it-works)
+    - [Transaction Examples](#transaction-examples)
+  - [Deployment](#deployment)
+    - [Smart Contract](#smart-contract)
+    - [Frontend](#frontend)
+  - [Testing](#testing)
+  - [Contributing](#contributing)
+    - [Code Guidelines](#code-guidelines)
+  - [API Reference](#api-reference)
+    - [Contract Functions](#contract-functions)
+      - [`list-item(name, description, price, quantity)`](#list-itemname-description-price-quantity)
+      - [`buy-item(itemId, quantity)`](#buy-itemitemid-quantity)
+      - [`harvest-sats()`](#harvest-sats)
+      - [`get-item(itemId)` → Item Data](#get-itemitemid--item-data)
+      - [`get-seller-sats(seller)` → Balance](#get-seller-satsseller--balance)
+  - [Project Structure](#project-structure)
+  - [License](#license)
+
+
+
 ## What's SatoshiFarm?
 
 Imagine a world where farmers sell their harvest directly to consumers, getting paid instantly in STX without any platform fees. That's SatoshiFarm - a trustless marketplace built on Bitcoin's most advanced Layer 2 solution.
 
+
+![SatoshiFarm](assets/toshifarm.png)
+
+---
 ### Key Features
 
 - **Instant Payments**: Direct STX transfers from buyer to farmer
