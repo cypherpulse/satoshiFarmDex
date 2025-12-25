@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 47% 10%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 47% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 24 100% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 220 15% 60%;
+
+    --accent: 24 100% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 18%;
+    --ring: 24 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom SatoshiFarm tokens */
+    --bitcoin-orange: 24 100% 50%;
+    --bitcoin-orange-glow: 24 100% 60%;
+    --farm-green: 142 70% 45%;
+    --harvest-gold: 45 100% 50%;
+    --stx-purple: 270 70% 60%;
+
+    /* Gradients */
+    --gradient-bitcoin: linear-gradient(135deg, hsl(24 100% 50%), hsl(35 100% 55%));
+    --gradient-card: linear-gradient(180deg, hsl(222 47% 12%), hsl(222 47% 8%));
+    --gradient-glow: radial-gradient(ellipse at center, hsl(24 100% 50% / 0.2), transparent 70%);
+
+    /* Shadows */
+    --shadow-bitcoin: 0 0 30px hsl(24 100% 50% / 0.3);
+    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.3);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  code, .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-bitcoin {
+    @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-lg
+           transition-all duration-300 hover:scale-105 hover:shadow-[0_0_30px_hsl(24_100%_50%/0.4)]
+           active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+  }
+
+  .btn-bitcoin-outline {
+    @apply border-2 border-primary text-primary font-semibold px-6 py-3 rounded-lg
+           transition-all duration-300 hover:bg-primary hover:text-primary-foreground
+           hover:shadow-[0_0_20px_hsl(24_100%_50%/0.3)];
+  }
+
+  .card-farm {
+    @apply bg-card border border-border rounded-xl p-6 
+           shadow-[0_8px_32px_hsl(0_0%_0%/0.3)]
+           transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_20px_hsl(24_100%_50%/0.15)];
+  }
+
+  .input-farm {
+    @apply bg-input border border-border rounded-lg px-4 py-3 w-full
+           text-foreground placeholder:text-muted-foreground
+           focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary
+           transition-all duration-200;
+  }
+
+  .glow-pulse {
+    animation: glow-pulse 2s ease-in-out infinite;
+  }
+
+  .float-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .text-gradient-bitcoin {
+    @apply bg-gradient-to-r from-primary to-[hsl(35_100%_55%)] bg-clip-text text-transparent;
+  }
+
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--border) / 0.3) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.3) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(24 100% 50% / 0.4), 0 0 40px hsl(24 100% 50% / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px hsl(24 100% 50% / 0.6), 0 0 60px hsl(24 100% 50% / 0.3);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.5s ease-out forwards;
+}
+
+.animate-delay-100 { animation-delay: 100ms; }
+.animate-delay-200 { animation-delay: 200ms; }
+.animate-delay-300 { animation-delay: 300ms; }
+.animate-delay-400 { animation-delay: 400ms; }
