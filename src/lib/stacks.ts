@@ -5,7 +5,7 @@ export const CONTRACT_NAME = 'satoshi-farm';
 export const FULL_CONTRACT = `${CONTRACT_ADDRESS}.${CONTRACT_NAME}`;
 
 // WalletConnect Project ID - Get yours at https://cloud.reown.com
-export const WALLETCONNECT_PROJECT_ID = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID;
+export const WALLETCONNECT_PROJECT_ID = import.meta.env.VITE_WALLETCONNECT_PROJECT_ID || '5b2a3a97c717a40b7b3cb2e4523b7a32';
 
 export interface MarketItem {
   id: number;
