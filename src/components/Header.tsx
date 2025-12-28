@@ -13,15 +13,15 @@ interface HeaderProps {
 const Header = ({ isConnected, address, isConnecting, onConnect, onDisconnect }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <div className="relative">
-            <BitcoinIcon size={40} className="text-primary" />
-            <Sprout className="absolute -bottom-1 -right-1 w-4 h-4 text-farm-green" />
+            <BitcoinIcon size={32} className="sm:w-10 sm:h-10 text-primary" />
+            <Sprout className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 text-farm-green" />
           </div>
           <div>
-            <h1 className="text-xl md:text-2xl font-bold text-gradient-bitcoin">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gradient-bitcoin">
               SatoshiFarm
             </h1>
             <p className="text-xs text-muted-foreground hidden sm:block">
@@ -31,7 +31,7 @@ const Header = ({ isConnected, address, isConnecting, onConnect, onDisconnect }:
         </div>
 
         {/* Network Badge */}
-        <div className="hidden md:flex items-center gap-2 px-3 py-1.5 bg-stx-purple/20 border border-stx-purple/30 rounded-full">
+        <div className="hidden lg:flex items-center gap-2 px-3 py-1.5 bg-stx-purple/20 border border-stx-purple/30 rounded-full">
           <div className="w-2 h-2 bg-stx-purple rounded-full animate-pulse" />
           <span className="text-sm text-stx-purple font-medium">Stacks Testnet</span>
         </div>
