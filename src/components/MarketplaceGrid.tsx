@@ -51,7 +51,7 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
       {activeItems.map((item, index) => (
         <div
           key={item.id}
@@ -59,16 +59,16 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
           style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
         >
           {/* Item Header */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex-1">
+          <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-2">
+            <div className="flex-1 min-w-0">
               <h3 className="text-lg font-bold text-foreground truncate">{item.name}</h3>
               <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
-                <User className="w-3 h-3" />
-                <span className="font-mono">{shortenAddress(item.seller)}</span>
+                <User className="w-3 h-3 flex-shrink-0" />
+                <span className="font-mono truncate">{shortenAddress(item.seller)}</span>
               </div>
             </div>
-            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg">
-              <BitcoinIcon size={16} className="text-primary" />
+            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg self-start sm:self-auto">
+              <BitcoinIcon size={16} className="text-primary flex-shrink-0" />
               <span className="text-sm font-bold text-primary">
                 {microStxToStx(item.price)}
               </span>
@@ -90,14 +90,14 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
 
           {/* Buy Controls */}
           {isConnected && (
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <input
                 type="number"
                 min="1"
                 max={Number(item.quantity)}
                 value={quantities[item.id] || '1'}
                 onChange={(e) => setQuantities(prev => ({ ...prev, [item.id]: e.target.value }))}
-                className="input-farm w-20 text-center"
+                className="input-farm w-full sm:w-20 text-center"
                 placeholder="Qty"
               />
               <button
@@ -110,7 +110,8 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
                 ) : (
                   <ShoppingCart className="w-4 h-4" />
                 )}
-                Buy Now
+                <span className="hidden sm:inline">Buy Now</span>
+                <span className="sm:hidden">Buy</span>
               </button>
             </div>
           )}
