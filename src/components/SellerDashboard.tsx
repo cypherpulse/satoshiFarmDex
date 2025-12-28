@@ -23,31 +23,31 @@ const SellerDashboard = ({
 
   return (
     <div className="card-farm bg-gradient-to-br from-card to-primary/5 border-primary/20">
-      <div className="flex items-center gap-3 mb-6">
-        <div className="w-12 h-12 rounded-xl bg-primary/20 flex items-center justify-center float-animation">
-          <Sprout className="w-6 h-6 text-farm-green" />
+      <div className="flex items-center gap-3 mb-4 sm:mb-6">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-primary/20 flex items-center justify-center float-animation">
+          <Sprout className="w-5 h-5 sm:w-6 sm:h-6 text-farm-green" />
         </div>
         <div>
-          <h3 className="text-xl font-bold">My Farm Dashboard</h3>
-          <p className="text-sm text-muted-foreground">Your earnings from sales</p>
+          <h3 className="text-lg sm:text-xl font-bold">My Farm Dashboard</h3>
+          <p className="text-xs sm:text-sm text-muted-foreground">Your earnings from sales</p>
         </div>
       </div>
 
       {/* Earnings Display */}
-      <div className="bg-background/50 rounded-xl p-6 mb-6 border border-border/50">
+      <div className="bg-background/50 rounded-xl p-4 sm:p-6 mb-4 sm:mb-6 border border-border/50">
         <div className="flex items-center justify-between mb-2">
-          <span className="text-muted-foreground text-sm flex items-center gap-2">
-            <TrendingUp className="w-4 h-4 text-farm-green" />
+          <span className="text-muted-foreground text-xs sm:text-sm flex items-center gap-2">
+            <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-farm-green" />
             Earned Sats
           </span>
-          <BitcoinIcon size={24} className="text-primary" />
+          <BitcoinIcon size={20} className="sm:w-6 text-primary" />
         </div>
         <div className="flex items-end gap-2">
           {isLoading ? (
-            <Loader2 className="w-8 h-8 text-primary animate-spin" />
+            <Loader2 className="w-6 h-6 sm:w-8 sm:h-8 text-primary animate-spin" />
           ) : (
             <>
-              <span className="text-3xl font-bold text-gradient-bitcoin">
+              <span className="text-2xl sm:text-3xl font-bold text-gradient-bitcoin">
                 {microStxToStx(earnedSats)}
               </span>
               <span className="text-lg text-muted-foreground mb-1">STX</span>
@@ -60,7 +60,7 @@ const SellerDashboard = ({
       <button
         onClick={onHarvest}
         disabled={isHarvesting || earnedSats === 0n}
-        className={`w-full py-4 px-6 rounded-xl font-bold text-lg flex items-center justify-center gap-3
+        className={`w-full py-3 sm:py-4 px-4 sm:px-6 rounded-xl font-bold text-base sm:text-lg flex items-center justify-center gap-2 sm:gap-3
           ${earnedSats > 0n 
             ? 'btn-bitcoin glow-pulse' 
             : 'bg-muted text-muted-foreground cursor-not-allowed'
@@ -68,13 +68,14 @@ const SellerDashboard = ({
       >
         {isHarvesting ? (
           <>
-            <Loader2 className="w-6 h-6 animate-spin" />
+            <Loader2 className="w-5 h-5 sm:w-6 sm:h-6 animate-spin" />
             Harvesting...
           </>
         ) : (
           <>
-            <BitcoinIcon size={24} className="text-current" />
-            Harvest Your Sats ₿
+            <BitcoinIcon size={20} className="sm:w-6 text-current" />
+            <span className="hidden sm:inline">Harvest Your Sats ₿</span>
+            <span className="sm:hidden">Harvest ₿</span>
           </>
         )}
       </button>
