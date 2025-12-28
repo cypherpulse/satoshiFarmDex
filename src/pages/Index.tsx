@@ -283,10 +283,10 @@ const Index = () => {
       <main>
         <HeroSection isConnected={isConnected} onConnect={handleConnect} />
 
-        <div className="container mx-auto px-4 py-12">
+        <div className="container mx-auto px-4 py-8 sm:py-12">
           {/* Dashboard Section */}
           {isConnected && (
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
               <SellerDashboard
                 earnedSats={earnedSats}
                 isLoading={isLoadingSats}
@@ -300,14 +300,14 @@ const Index = () => {
 
           {/* Marketplace Section */}
           <section>
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 sm:mb-8 gap-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
-                  <Store className="w-5 h-5 text-primary" />
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+                  <Store className="w-4 h-4 sm:w-5 sm:h-5 text-primary" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold">Marketplace</h2>
-                  <p className="text-sm text-muted-foreground">
+                  <h2 className="text-xl sm:text-2xl font-bold">Marketplace</h2>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
                     Fresh farm products, secured by Bitcoin
                   </p>
                 </div>
@@ -315,10 +315,10 @@ const Index = () => {
               <button
                 onClick={fetchItems}
                 disabled={isLoadingItems}
-                className="btn-bitcoin-outline flex items-center gap-2 px-4 py-2"
+                className="btn-bitcoin-outline flex items-center gap-2 px-3 py-2 sm:px-4 text-sm"
               >
                 <RefreshCw className={`w-4 h-4 ${isLoadingItems ? 'animate-spin' : ''}`} />
-                Refresh
+                <span className="hidden sm:inline">Refresh</span>
               </button>
             </div>
 
@@ -332,11 +332,11 @@ const Index = () => {
 
           {/* Not Connected CTA */}
           {!isConnected && (
-            <section className="mt-16 text-center">
-              <div className="card-farm max-w-lg mx-auto py-12">
-                <Sprout className="w-16 h-16 text-farm-green mx-auto mb-4" />
-                <h3 className="text-2xl font-bold mb-3">Ready to Farm?</h3>
-                <p className="text-muted-foreground mb-6">
+            <section className="mt-12 sm:mt-16 text-center">
+              <div className="card-farm max-w-lg mx-auto py-8 sm:py-12">
+                <Sprout className="w-12 h-12 sm:w-16 sm:h-16 text-farm-green mx-auto mb-4" />
+                <h3 className="text-xl sm:text-2xl font-bold mb-3">Ready to Farm?</h3>
+                <p className="text-muted-foreground mb-6 text-sm sm:text-base">
                   Connect your wallet to start listing products and earning Sats
                 </p>
                 <button onClick={handleConnect} className="btn-bitcoin">
@@ -349,8 +349,8 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-8 mt-12">
-        <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
+      <footer className="border-t border-border py-6 sm:py-8 mt-8 sm:mt-12">
+        <div className="container mx-auto px-4 text-center text-xs sm:text-sm text-muted-foreground">
           <p>SatoshiFarm © 2024 — Built on Stacks, Secured by Bitcoin</p>
           <p className="mt-2 font-mono text-xs">Contract: {FULL_CONTRACT}</p>
         </div>
