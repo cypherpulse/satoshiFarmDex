@@ -283,10 +283,10 @@ const Index = () => {
       <main>
         <HeroSection isConnected={isConnected} onConnect={handleConnect} />
 
-        <div className="container mx-auto px-4 py-8 sm:py-12">
+        <div className="container mx-auto px-3 xs:px-4 py-6 sm:py-8 md:py-12">
           {/* Dashboard Section */}
           {isConnected && (
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
               <SellerDashboard
                 earnedSats={earnedSats}
                 isLoading={isLoadingSats}
@@ -349,10 +349,10 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-border py-6 sm:py-8 mt-8 sm:mt-12">
-        <div className="container mx-auto px-4 text-center text-xs sm:text-sm text-muted-foreground">
-          <p>SatoshiFarm © 2024 — Built on Stacks, Secured by Bitcoin</p>
-          <p className="mt-2 font-mono text-xs">Contract: {FULL_CONTRACT}</p>
+      <footer className="border-t border-border py-4 sm:py-6 md:py-8 mt-6 sm:mt-8 md:mt-12">
+        <div className="container mx-auto px-3 xs:px-4 text-center text-xs xs:text-sm text-muted-foreground">
+          <p className="text-xs sm:text-sm">SatoshiFarm © 2024 — Built on Stacks, Secured by Bitcoin</p>
+          <p className="mt-1 sm:mt-2 font-mono text-xs break-all sm:break-normal">Contract: {FULL_CONTRACT}</p>
         </div>
       </footer>
     </div>
