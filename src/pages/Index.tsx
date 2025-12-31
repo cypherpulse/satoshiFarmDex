@@ -3,7 +3,7 @@ import { request } from '@stacks/connect';
 import { Cl, cvToValue, fetchCallReadOnlyFunction } from '@stacks/transactions';
 import { STACKS_TESTNET } from '@stacks/network';
 import { toast } from 'sonner';
-import { RefreshCw, Store, Sprout } from 'lucide-react';
+import { RefreshCw, Store, Sprout, Github } from 'lucide-react';
 
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
@@ -351,8 +351,19 @@ const Index = () => {
       {/* Footer */}
       <footer className="border-t border-border py-4 sm:py-6 md:py-8 mt-6 sm:mt-8 md:mt-12">
         <div className="container mx-auto px-3 xs:px-4 text-center text-xs xs:text-sm text-muted-foreground">
-          <p className="text-xs sm:text-sm">SatoshiFarm © 2024 — Built on Stacks, Secured by Bitcoin</p>
-          <p className="mt-1 sm:mt-2 font-mono text-xs break-all sm:break-normal">Contract: {FULL_CONTRACT}</p>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <p className="text-xs sm:text-sm">SatoshiFarm © 2026 — Built on Stacks, Secured by Bitcoin</p>
+            <a
+              href="https://github.com/cypherpulse/satoshiFarmDex.git"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              aria-label="View on GitHub"
+            >
+              <Github size={16} className="sm:w-5 sm:h-5" />
+            </a>
+          </div>
+          <p className="font-mono text-xs break-all sm:break-normal">Contract: {FULL_CONTRACT}</p>
         </div>
       </footer>
     </div>
