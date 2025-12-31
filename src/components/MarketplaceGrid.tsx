@@ -51,7 +51,7 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
   }
 
   return (
-    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+    <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6">
       {activeItems.map((item, index) => (
         <div
           key={item.id}
