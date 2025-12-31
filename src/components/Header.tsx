@@ -13,18 +13,18 @@ interface HeaderProps {
 const Header = ({ isConnected, address, isConnecting, onConnect, onDisconnect }: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-lg">
-      <div className="container mx-auto px-4 py-3 sm:py-4 flex items-center justify-between">
+      <div className="container mx-auto px-3 xs:px-4 py-2 xs:py-3 sm:py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-1 xs:gap-2 sm:gap-3">
           <div className="relative">
-            <BitcoinIcon size={32} className="sm:w-10 sm:h-10 text-primary" />
-            <Sprout className="absolute -bottom-1 -right-1 w-3 h-3 sm:w-4 sm:h-4 text-farm-green" />
+            <BitcoinIcon size={28} className="xs:w-8 sm:w-10 text-primary" />
+            <Sprout className="absolute -bottom-1 -right-1 w-2 h-2 xs:w-3 xs:h-3 sm:w-4 sm:h-4 text-farm-green" />
           </div>
           <div>
-            <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-gradient-bitcoin">
+            <h1 className="text-base xs:text-lg sm:text-xl md:text-2xl font-bold text-gradient-bitcoin">
               SatoshiFarm
             </h1>
-            <p className="text-xs text-muted-foreground hidden sm:block">
+            <p className="text-xs text-muted-foreground hidden xs:block sm:hidden md:block">
               Harvest Sats on Bitcoin L2
             </p>
           </div>
