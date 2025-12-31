@@ -8,20 +8,20 @@ interface HeroSectionProps {
 
 const HeroSection = ({ isConnected, onConnect }: HeroSectionProps) => {
   return (
-    <section className="relative py-12 md:py-16 lg:py-24 overflow-hidden">
+    <section className="relative py-8 sm:py-12 md:py-16 lg:py-24 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] sm:w-[600px] sm:h-[600px] bg-primary/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] xs:w-[400px] xs:h-[400px] sm:w-[600px] sm:h-[600px] bg-primary/10 rounded-full blur-3xl" />
       
       {/* Floating Bitcoin Icons */}
-      <div className="absolute top-20 left-[10%] opacity-20 float-animation" style={{ animationDelay: '0s' }}>
-        <BitcoinIcon size={32} className="sm:w-12 text-primary" />
+      <div className="absolute top-16 xs:top-20 left-[10%] opacity-20 float-animation" style={{ animationDelay: '0s' }}>
+        <BitcoinIcon size={24} className="xs:w-8 sm:w-12 text-primary" />
       </div>
-      <div className="absolute top-40 right-[15%] opacity-15 float-animation" style={{ animationDelay: '1s' }}>
-        <BitcoinIcon size={24} className="sm:w-8 text-primary" />
+      <div className="absolute top-32 xs:top-40 right-[15%] opacity-15 float-animation" style={{ animationDelay: '1s' }}>
+        <BitcoinIcon size={20} className="xs:w-6 sm:w-8 text-primary" />
       </div>
-      <div className="absolute bottom-20 left-[20%] opacity-10 float-animation" style={{ animationDelay: '2s' }}>
-        <BitcoinIcon size={28} className="sm:w-10 text-primary" />
+      <div className="absolute bottom-16 xs:bottom-20 left-[20%] opacity-10 float-animation" style={{ animationDelay: '2s' }}>
+        <BitcoinIcon size={22} className="xs:w-7 sm:w-10 text-primary" />
       </div>
 
       <div className="container mx-auto px-4 relative">
