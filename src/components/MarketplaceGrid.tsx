@@ -59,30 +59,30 @@ const MarketplaceGrid = ({ items, isLoading, onBuy, isConnected }: MarketplaceGr
           style={{ animationDelay: `${index * 100}ms`, animationFillMode: 'forwards' }}
         >
           {/* Item Header */}
-          <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-4 gap-2">
+          <div className="flex flex-col xs:flex-row xs:items-start justify-between mb-3 xs:mb-4 gap-2">
             <div className="flex-1 min-w-0">
-              <h3 className="text-lg font-bold text-foreground truncate">{item.name}</h3>
-              <div className="flex items-center gap-1 text-sm text-muted-foreground mt-1">
+              <h3 className="text-base xs:text-lg font-bold text-foreground truncate leading-tight">{item.name}</h3>
+              <div className="flex items-center gap-1 text-xs xs:text-sm text-muted-foreground mt-1">
                 <User className="w-3 h-3 flex-shrink-0" />
-                <span className="font-mono truncate">{shortenAddress(item.seller)}</span>
+                <span className="font-mono truncate text-xs xs:text-sm">{shortenAddress(item.seller)}</span>
               </div>
             </div>
-            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg self-start sm:self-auto">
-              <BitcoinIcon size={16} className="text-primary flex-shrink-0" />
-              <span className="text-sm font-bold text-primary">
+            <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 rounded-lg self-start xs:self-auto mt-1 xs:mt-0">
+              <BitcoinIcon size={14} className="xs:w-4 text-primary flex-shrink-0" />
+              <span className="text-xs xs:text-sm font-bold text-primary">
                 {microStxToStx(item.price)}
               </span>
             </div>
           </div>
 
           {/* Description */}
-          <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+          <p className="text-xs xs:text-sm text-muted-foreground mb-3 xs:mb-4 line-clamp-2 leading-relaxed">
             {item.description}
           </p>
 
           {/* Stock */}
-          <div className="flex items-center gap-2 mb-4 text-sm">
-            <Package className="w-4 h-4 text-farm-green" />
+          <div className="flex items-center gap-2 mb-3 xs:mb-4 text-xs xs:text-sm">
+            <Package className="w-3 h-3 xs:w-4 xs:h-4 text-farm-green" />
             <span className="text-muted-foreground">
               Stock: <span className="text-foreground font-medium">{item.quantity.toString()}</span>
             </span>
